@@ -1,13 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.header {
+  @apply sticky md:sticky z-20 top-0 bg-white flex flex-col gap-4 justify-center items-center p-4 shadow-2xl md:px-36 md:py-4 md:flex-row md:justify-between;
+  padding: 1rem 10rem;
+}
+.grid-container {
+  @apply grid grid-cols-1 gap-8 m-4 md:grid-cols-4 p-4 md:py-4;
+}
+.filter-container {
+  @apply flex flex-col items-start p-4 md:py-4;
+}
+.search-icon {
+  @apply absolute inset-y-0 right-0 flex items-center px-3 text-gray-700 pointer-events-none;
+}
+.card-offer {
+  @apply absolute bottom-[29%] inset-x-0 text-center font-bold text-lg text-white rounded-b-lg bg-gradient-to-t from-black;
+}
+#filter-btn-container button {
+  @apply bg-white border border-gray-300 px-4 py-2 rounded-3xl shadow-md flex items-center;
+}
+.filter-list {
+  @apply absolute h-80 z-20 top-14 md:top-16 bg-white w-1/2 md:w-1/4 px-4 py-2 rounded-xl shadow-md overflow-x-hidden;
+}
+.sort-list {
+  @apply absolute max-h-80 z-20 top-14 left-28 md:top-16 bg-white w-1/2 md:w-1/4 px-4 py-2 rounded-xl shadow-md overflow-hidden;
+}
+.grid-card {
+  @apply w-full h-full overflow-hidden transform hover:scale-95 transition ease-in-out duration-200 relative;
+}
+.card-img {
+  @apply h-52 w-full object-cover rounded-lg;
+}
+.modal-container {
+  @apply z-40 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[60%] h-[80%] md:h-[80%] bg-gray-100 rounded-xl overflow-scroll shadow-2xl;
+}
+.modal-title {
+  @apply flex flex-col md:flex-row md:justify-between p-4 text-xl font-bold text-nowrap overflow-hidden text-start text-gray-700 border-b-2 border-gray-200;
+}
+.modal-subtitle {
+  @apply md:col-span-1 md:justify-end md:px-4 md:text-base font-semibold text-gray-700;
+}
+.modal-subtitle-text {
+  @apply mt-0 md:col-span-4 md:pr-10 md:text-base text-justify whitespace-pre-wrap text-gray-500 font-normal;
+}
+.modal-data {
+  @apply flex flex-col px-4 py-4 gap-2 md:py-8 md:grid md:grid-cols-5 text-sm text-start items-stretch;
+}
+.modal-close {
+  @apply bg-gray-200 hover:bg-[#fc8019] hover:transition ease-in duration-100 rounded-full p-2 m-2;
+}
+.overlay {
+  @apply fixed z-30 top-0 left-0 w-full h-full bg-gray-900 bg-opacity-80;
+}
+.pagination-btn {
+  @apply flex items-center gap-2 p-2 mx-2 rounded hover:transition ease-in duration-100;
+}
+.searchbar {
+  @apply bg-gray-200 p-2 rounded-md w-[300px] focus:outline-none focus:ring focus:ring-gray-300;
+}
+footer {
+  background-color: rgb(2, 6, 12);
+}
+.swiggy {
+  color: #fc8019;
+}
+.rating {
+  color: rgba(2, 6, 12, 0.75);
+}
+.sort-list li {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  @apply hover:transition ease-in duration-100 hover:bg-[#fc8019] p-3 rounded;
+}
+.filter-list li {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+  @apply hover:transition ease-in duration-100 hover:bg-[#fc8019] p-3 rounded;
 }
